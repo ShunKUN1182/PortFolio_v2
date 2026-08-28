@@ -1,0 +1,35 @@
+---
+import {lang,title,description,x_name,url} from "../scripts/const";
+import "../styles/global.css";
+
+---
+
+<!DOCTYPE html>
+<html lang={lang} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="">
+<meta name="description" content={description}>
+<title>{title}</title>
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content=`@${x_name}`>
+<meta property="og:site_name" content={title}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:url" content={url}>
+<meta property="og:image" content=`${url}common/img/bg_img.jpg`>
+<meta property="og:type" content="website">
+<link rel="shortcut icon" href=`${url}favicon.ico` type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" href=`${url}logo.png`>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+JP:wght@600&family=Oswald:wght@329&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&family=Sawarabi+Mincho&family=Yuji+Mai&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <slot />
+</body>
+</html>
