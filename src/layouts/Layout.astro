@@ -1,7 +1,7 @@
 ---
 import {lang,title,description,x_name,url} from "../scripts/const";
+import Header from "../components/Header.astro";
 import "../styles/global.css";
-
 ---
 
 <!DOCTYPE html>
@@ -26,10 +26,16 @@ import "../styles/global.css";
 <link rel="apple-touch-icon" href=`${url}logo.png`>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+JP:wght@600&family=Oswald:wght@329&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&family=Sawarabi+Mincho&family=Yuji+Mai&display=swap" rel="stylesheet">
-
+<link
+  href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Noto+Sans+JP:wght@100..900&display=swap"
+  rel="stylesheet"
+>
 </head>
 <body>
+  <Header />
   <slot />
 </body>
 </html>
