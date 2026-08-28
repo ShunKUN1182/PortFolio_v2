@@ -3,15 +3,184 @@
 ---
 
 <style>
-  body {
-    font-family: 'Noto Sans JP',"sans-serif";
+  header {
+    padding: 15px 40px;
+    border-bottom: 3px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-family: "Anton SC", sans-serif;
+      font-size: 20px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      ul {
+        list-style-type: none;
+        display: flex;
+        gap: 24px;
+
+        li {
+          a {
+            text-decoration: none;
+            color: #000;
+            font-family: "Anton SC" ,sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .hamburger_menu {
+      display: none;
+    }
   }
-  h2 {
-    font-family: "Anton SC", sans-serif;
-    font-size: 20px;
+  .menu {
+    display: none;
   }
+
+  @media screen and (max-width:768px) {
+    header {
+      padding: 15px 20px;
+      /* background-color: tomato; */
+      nav {
+        display: none;
+      }
+      .hamburger_menu {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: tomato;
+        span {
+          display: block;
+          background-color: #000;
+          width: 24px;
+          height: 2px;
+          position: relative;
+          transition: 0.4s;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            transform: translateY(8px);
+            background-color: #000;
+            width: 24px;
+            height: 2px;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            transform: translateY(-8px);
+            background-color: #000;
+            width: 24px;
+            height: 2px;
+          }
+        }
+      }
+      .hamburger_menu.active {
+        position: fixed;
+        right: 20px;
+        top: 15px;
+        z-index: 10000;
+        span {
+            background-color: transparent;
+            &::before {
+              transform: translateY(0px) rotate(45deg);
+              background-color: #fff;
+            }
+            &::after {
+              transform: translateY(0px) rotate(-45deg);
+              background-color: #fff;
+            }
+        }
+      }
+    }
+    .show {
+      display: flex;
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100vw;
+      height: 100vh;
+      nav {
+        display: flex;
+        align-items: center;
+        ul {
+          width: 100vw;
+          height: 100vh;
+          list-style-type: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+          li {
+            a {
+              text-decoration: none;
+              color: #fff;
+              font-family: "Anton SC" ,sans-serif;
+              font-weight: 600;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
 </style>
 
 <header>
-  <h2>FUKUSHIMA SHUNYA</h2>
+  <h1>FUKUSHIMA SHUNYA</h1>
+  <div class="hamburger_menu">
+    <span></span>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a href="#">HOME</a>
+      </li>
+      <li>
+        <a href="#">ABOUT</a>
+      </li>
+      <li>
+        <a href="#">HISTORY</a>
+      </li>
+      <li>
+        <a href="#">WORKS</a>
+      </li>
+      <li>
+        <a href="#">SKILL</a>
+      </li>
+      <li>
+        <a href="#">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
 </header>
+<div class="menu">
+  <nav>
+    <ul>
+      <li>
+        <a href="#">HOME</a>
+      </li>
+      <li>
+        <a href="#">ABOUT</a>
+      </li>
+      <li>
+        <a href="#">HISTORY</a>
+      </li>
+      <li>
+        <a href="#">WORKS</a>
+      </li>
+      <li>
+        <a href="#">SKILL</a>
+      </li>
+      <li>
+        <a href="#">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+</div>
